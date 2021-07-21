@@ -1,0 +1,6 @@
+////////////////////// - Hannibal Help Content(UTF-8) - /////////////////////////////
+//
+//          在gradle中配置showHelp = false 来关闭这个帮助内容的输出
+//           Hope you enjoy!
+//
+///////////////////// - Hannibal Help Content END - /////////////////////////////

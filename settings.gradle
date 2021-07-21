@@ -1,0 +1,2 @@
+include ':app', ':probe'
+include ':flutterpatch'
