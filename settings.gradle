@@ -1,10 +1,1 @@
 include ':app', ':probe'
-setBinding(new Binding([gradle: this]))
-evaluate(new File(
-  settingsDir,
-  '../Hannibal/flutter_test_module/.android/include_flutter.groovy'
-))
-include ':flutterpatch'
-
-include ':flutter_test_module'
-project(':flutter_test_module').projectDir = new File('../flutter_test_module')
