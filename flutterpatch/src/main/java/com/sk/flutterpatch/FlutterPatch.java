@@ -78,15 +78,16 @@ public class FlutterPatch {
      * @param abis 从gradle里的ndk读取配置
      *
      */
-    public static void hook(Object obj, String abis) {
+    public static void hook(Object obj, Object abis) {
         if (obj instanceof Context) {
 
             Context context = (Context) obj;
+            String abisStr = String.valueOf(abis);
             TinkerLog.i(TAG, "find FlutterMain");
 
             if (isUseTinker) {
 
-                String libPathFromTinker = getLibPath(context, abis);
+                String libPathFromTinker = getLibPath(context, abisStr);
                 if (!TextUtils.isEmpty(libPathFromTinker)) {
                     reflect(libPathFromTinker);
                 }
@@ -208,7 +209,7 @@ public class FlutterPatch {
             String[] abiStrs = abis.split(",");
             if (abiStrs.length > 0) {
 
-                TinkerLog.i(TAG, "cpu abi is:" + abiStrs[0] + " from ndk config");
+                TinkerLog.i(TAG, "cpu abi is:" + abiStrs[0] + " all ndk config >> " + abis);
                 return abiStrs[0];
             }
         }

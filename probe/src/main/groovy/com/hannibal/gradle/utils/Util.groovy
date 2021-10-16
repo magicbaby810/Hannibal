@@ -178,7 +178,7 @@ public class Util {
 
 //      ========================================================================
 
-        HashSet d = project.android.defaultConfig.ndk.getProperty("abiFilters")
+        String[] d = project.android.defaultConfig.ndk.getProperty("abiFilters")
         String str = ""
         for (String dd : d) {
             str += (dd + ",")
