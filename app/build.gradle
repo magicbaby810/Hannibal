@@ -80,7 +80,7 @@ dependencies {
 //
 //    printLog = true
 //
-//    adjustFlutterBoost = true
+////    adjustFlutterBoost = true
 //
 //    //this is the most important part
 //    modifyMatchMaps = [

@@ -183,7 +183,7 @@ public class Util {
         for (String dd : d) {
             str += (dd + ",")
         }
-        println(str)
+        println("abiFilters：" + str)
 
         String className = 'io.flutter.view.FlutterMain'
 
