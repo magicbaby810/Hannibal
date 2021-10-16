@@ -178,6 +178,12 @@ public class Util {
 
 //      ========================================================================
 
+        HashSet d = project.android.defaultConfig.ndk.getProperty("abiFilters")
+        String str = ""
+        for (String dd : d) {
+            str += (dd + ",")
+        }
+        println(str)
 
         String className = 'io.flutter.view.FlutterMain'
 
@@ -191,10 +197,11 @@ public class Util {
                             void visitInsn(int opcode) {
                                 if (opcode == Opcodes.RETURN) {
                                     methodVisitor.visitVarInsn(Opcodes.ALOAD, 0)
+                                    methodVisitor.visitLdcInsn(str)
                                     methodVisitor.visitMethodInsn(Opcodes.INVOKESTATIC,
                                             insertClassAbsolutePath,
                                             "hook",
-                                            "(Ljava/lang/Object;)V",
+                                            "(Ljava/lang/Object;Ljava/lang/Object;)V",
                                             false)
 
                                     Log.info "============== adjust Flutter success =============="
